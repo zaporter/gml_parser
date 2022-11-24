@@ -79,7 +79,7 @@ numeric_literal = _{
 
 object = { "[" ~ "]" |
     "[" ~ line_terminator ~ "]" |
-    "[" ~ line_terminator ~ pair ~ (line_terminator_sequence ~ pair)* ~ line_terminator_sequence? ~ "]"
+    line_terminator? ~ "[" ~ line_terminator ~ pair ~ (line_terminator_sequence ~ pair)* ~ line_terminator_sequence? ~ ","? ~ "]"
 }
 
 pair = _{ identifier ~ value}
@@ -94,7 +94,7 @@ single_quote_char = _{
 
 string = ${ "\"" ~ double_quote_char* ~ "\"" | "'" ~ single_quote_char* ~ "'" }
 
-text = { SOI ~ pair ~ line_terminator* ~ EOI }
+text = { SOI ~ line_terminator* ~ pair ~ line_terminator* ~ EOI }
 
 unicode_escape_sequence = @{ ASCII_HEX_DIGIT{4} }
 
