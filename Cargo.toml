@@ -3,7 +3,7 @@ name = "gml_parser"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-keywords = ["gml", "graph modeling language", "parsing", "parser"]
+keywords = ["gml", "parsing", "parser"]
 description = "A fast and simple Graph Modeling Language (GML) parser"
 repository = "https://github.com/zaporter/gml_parser"
 
