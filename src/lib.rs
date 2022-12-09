@@ -157,13 +157,13 @@ pub struct Graph {
     pub edges: Vec<Edge>,
     attrs: Vec<(String, GMLValue)>,
 }
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Node {
     pub id: i64,
     pub label: Option<String>,
     attrs: Vec<(String, GMLValue)>,
 }
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Edge {
     pub source: i64,
     pub target: i64,
